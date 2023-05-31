@@ -1,0 +1,2 @@
+class GroupPayment < ApplicationRecord
+end
