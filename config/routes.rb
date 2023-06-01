@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  get '/splash', to: 'splash#index', as: 'splash'
 
   devise_scope :user do
     authenticated :user do
