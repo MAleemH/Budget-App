@@ -1,0 +1,26 @@
+<section class='full-page'>
+    <div class='header'>
+        <%= image_tag('hamburger.svg', size: '35x35') %>
+
+        <h3>CATEGORIES</h3>
+        
+        <% if user_signed_in? %>
+            <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: :delete } %>
+        <% end %>
+    </div>
+    <div class='main'>
+        <div>
+            <%= image_tag('search.svg', size: '35x35') %>
+            <p class='category-title'>Mac Donalds Fastfood</p>
+            <p>$17.00</p>
+        </div>
+        <div>
+            <%= image_tag('search.svg', size: '35x35') %>
+            <p class='category-title'>Mac Donalds Fastfood</p>
+            <p>$17.00</p>
+        </div>
+    </div>
+    <div class='footer'>
+        <%= link_to 'Add A New Category', new_user_group_path(@user) %>
+    </div>
+</section>
