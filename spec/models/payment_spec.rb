@@ -2,9 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Payment, type: :model do
   before(:each) do
-    @user = User.create(name: 'Muhammad Aleem', email: 'aleem123@gmail.com', password: 'aleem123', password_confirmation: 'aleem123')
+    @user = User.create(name: 'Muhammad Aleem', email: 'aleem123@gmail.com', password: 'aleem123',
+                        password_confirmation: 'aleem123')
   end
-  
+
   describe 'validations' do
     it 'is valid with valid attributes' do
       payment = Payment.new(name: 'Rent', amount: 100, author_id: @user.id)
