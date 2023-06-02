@@ -12,18 +12,18 @@
         <% @groups.each do |group| %>
             <% if current_user.id == group.author_id %>
                 <div class='category'>
+                    <div>
+                        <%= image_tag(group.icon, size: '50x50') %>
 
-                    <%= image_tag(group.icon, size: '50x50') %>
+                        <div class='category-title'>
+                            <%= link_to user_group_payments_path(current_user, group.id) do %>
+                                <p><%= group.name %></p>
+                            <% end %>
 
-                    <div class='category-title'>
-                        <%= link_to user_group_path(group.author, group) do %>
-                            <p><%= group.name %></p>
-                        <% end %>
-                        
-                        <small><%= group.created_at.strftime("%d %b %Y") %></small>
+                            <small><%= group.created_at.strftime("%d %b %Y") %></small>
+                        </div>
                     </div>
-
-                    <p>$17.00</p>
+                    <p>$<%= number_with_delimiter(group.payments.sum(:amount)) %></p>
                 </div>
             <% end %>
         <% end %>

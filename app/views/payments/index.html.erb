@@ -1,0 +1,40 @@
+<section class='full-page'>
+    <div class='header'>
+        <p class='back-btn'>
+            <%= link_to 'Back', unauthenticated_root_path %>
+        </p>
+
+        <h3>TRANSACTIONS</h3>
+        
+        <% if user_signed_in? %>
+            <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: :delete } %>
+        <% end %>
+    </div>
+    <div class='main'>
+        <div class='transactions'>
+            <div class='category-intro'>
+                <div class='category-name'>
+                    <%= image_tag(@group.icon, size: '50x50') %>
+                    <p><%= @group.name %></p>
+                </div>
+                <p>This is a dummy text. It is just for the description of the category.</p>
+            </div>
+            <div class='total-payment'>
+                <p>TOTAL PAYMENT</p>
+                <p>$<%= number_with_delimiter(@group.payments.sum(:amount)) %></p>
+            </div>
+            <div class='payments'>
+                <% @payments.each do |payment| %>
+                    <div>
+                        <p>Transaction No <%= payment.id %></p>
+                        <p><%= payment.created_at.strftime('%d %B %Y') %></p>
+                        <p>$<%= payment.amount %></p>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <div class='footer'>
+        <%= link_to 'Add A New Transaction', new_user_group_payment_path(current_user, @group) %>
+    </div>
+</section>

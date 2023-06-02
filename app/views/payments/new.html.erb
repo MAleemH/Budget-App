@@ -1,0 +1,29 @@
+<section class='full-page'>
+    <div class='header'>
+        <p class='back-btn'>
+            <%= link_to 'Back', :back %>
+        </p>
+
+        <h3>NEW TRANSACTION</h3>
+        
+        <% if user_signed_in? %>
+            <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: :delete } %>
+        <% end %>
+    </div>
+    <div class='login-form'>
+        <%= form_with model: @payment, url: user_group_payments_path do |form| %>
+            <div class="field category-input">
+                <%= form.text_field :name, placeholder: 'Name', required: true %>
+            </div>
+            <div class="field">
+                <%= form.text_field :amount, placeholder: 'Amount', required: true %>
+            </div>
+            <div class="field">
+                <%= form.collection_select :group_id, @current_user.groups, :id, :name, prompt: 'Select a category', required: true %>
+            </div>
+            <div class="actions">
+                <%= form.submit 'Create Payment', class: 'form-login' %>
+            </div>
+        <% end %>
+    </div>
+</section>
