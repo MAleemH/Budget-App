@@ -9,16 +9,24 @@
         <% end %>
     </div>
     <div class='main'>
-        <div>
-            <%= image_tag('search.svg', size: '35x35') %>
-            <p class='category-title'>Mac Donalds Fastfood</p>
-            <p>$17.00</p>
-        </div>
-        <div>
-            <%= image_tag('search.svg', size: '35x35') %>
-            <p class='category-title'>Mac Donalds Fastfood</p>
-            <p>$17.00</p>
-        </div>
+        <% @groups.each do |group| %>
+            <% if current_user.id == group.author_id %>
+                <div class='category'>
+
+                    <%= image_tag(group.icon, size: '50x50') %>
+
+                    <div class='category-title'>
+                        <%= link_to user_group_path(group.author, group) do %>
+                            <p><%= group.name %></p>
+                        <% end %>
+                        
+                        <small><%= group.created_at.strftime("%d %b %Y") %></small>
+                    </div>
+
+                    <p>$17.00</p>
+                </div>
+            <% end %>
+        <% end %>
     </div>
     <div class='footer'>
         <%= link_to 'Add A New Category', new_user_group_path(@user) %>
