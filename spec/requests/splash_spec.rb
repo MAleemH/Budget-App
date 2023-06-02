@@ -1,7 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe 'Splashes', type: :request do
-  describe 'GET /index' do
-    pending "add some examples (or delete) #{__FILE__}"
+RSpec.describe 'Splash', type: :request do
+  describe 'GET /' do
+    it 'returns a successful response' do
+      get '/'
+      expect(response).to have_http_status(:success)
+    end
   end
 end
