@@ -1,0 +1,26 @@
+<section class='full-page'>
+    <div class='header'>
+        <p class='back-btn'>
+            <%= link_to 'Back', unauthenticated_root_path %>
+        </p>
+
+        <h3>NEW CATEGORY</h3>
+        
+        <% if user_signed_in? %>
+            <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: :delete } %>
+        <% end %>
+    </div>
+    <div class='login-form'>
+        <%= form_with(model: @group, url: user_groups_path, multipart: true) do |form| %>
+            <div class="field category-input">
+                <%= form.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Category Name' %>
+            </div>
+            <div class="field">
+                <%= form.text_field :icon, autofocus: true, autocomplete: "icon", placeholder: 'Icon URL', required: true %>
+            </div>
+            <div class="actions">
+                <%= form.submit "Save Category", class: 'form-login' %>
+            </div>
+        <% end %>
+    </div>
+</section>
