@@ -14,7 +14,8 @@
  *= require_self
  */
 
-html, body {
+html,
+body {
   font-family: 'proxima-nova', sans-serif;
   padding: 0;
   margin: 0;
@@ -94,6 +95,7 @@ p {
 }
 
 /* splash screen end */
+
 /* login/signup */
 
 #login-section {
@@ -115,6 +117,23 @@ p {
   padding: 0;
   background-color: #3778c2;
   color: #e7e8e9;
+}
+
+.header a {
+  color: #b2cfec;
+  padding-right: 5px;
+}
+
+.footer a {
+  border: 1px solid #e7e8e9;
+  color: #e7e8e9;
+  width: 93%;
+  height: 40px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
 }
 
 .top small {
@@ -195,11 +214,6 @@ p {
   padding: 0;
 }
 
-.header a {
-  color: #b2cfec;
-  padding-right: 5px;
-}
-
 .main {
   flex: 1;
   display: flex;
@@ -241,18 +255,6 @@ p {
   height: 70px;
   position: sticky;
   bottom: 0;
-}
-
-.footer a {
-  border: 1px solid #e7e8e9;
-  color: #e7e8e9;
-  width: 93%;
-  height: 40px;
-  border-radius: 3px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
 }
 
 /* new category */
