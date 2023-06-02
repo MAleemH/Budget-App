@@ -14,15 +14,25 @@
  *= require_self
  */
 
-body {
+html, body {
   font-family: 'proxima-nova', sans-serif;
   padding: 0;
-  /* margin: 0; */
+  margin: 0;
   background-color: #e7e8e9;
+  height: 100%;
 }
 
 a {
   text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+  padding: 0;
 }
 
 /* splash screen */
@@ -34,7 +44,7 @@ a {
 }
 
 .splash-title {
-  padding: 170px 0;
+  padding: 185px 0;
   color: #555657;
 }
 
@@ -120,7 +130,7 @@ a {
 }
 
 .field input {
-  width: 98%;
+  width: 97.5%;
   height: 30px;
   border: 1px solid #97999b;
   margin-bottom: 2px;
@@ -143,3 +153,79 @@ a {
 }
 
 /* login/signup end */
+
+.full-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #3778c2;
+  color: #e7e8e9;
+  padding: 0;
+  height: 70px;
+}
+
+.header h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.header a {
+  color: #b2cfec;
+  padding-right: 5px;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+}
+
+.main div {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px 10px 0 10px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.category-title {
+  color: #97999b;
+}
+
+.footer {
+  background-color: #5fb523;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  position: sticky;
+  bottom: 0;
+}
+
+.footer a {
+  border: 1px solid #e7e8e9;
+  color: #e7e8e9;
+  width: 93%;
+  height: 40px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
