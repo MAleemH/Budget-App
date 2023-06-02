@@ -1,5 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe GroupPayment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'associations' do
+    it 'belongs to a group' do
+      grouppayment = GroupPayment.reflect_on_association(:group)
+      expect(grouppayment.macro).to eq(:belongs_to)
+    end
+
+    it 'belongs to a payment' do
+      grouppayment = GroupPayment.reflect_on_association(:payment)
+      expect(grouppayment.macro).to eq(:belongs_to)
+    end
+  end
 end
