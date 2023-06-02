@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      root 'users#index', as: :authenticated_root
+      root 'groups#index', as: :authenticated_root
     end
   
     unauthenticated do
@@ -12,5 +12,11 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :users
+  resources :users, only: [:index, :show] do
+    resources :groups, only: [:index, :show, :new, :create, :destroy] do
+      resources :expenses, only: [:index, :show, :new, :create, :destroy] do
+          resources :expense_groups, only: [:new, :create, :destroy]
+       end
+    end
+  end
 end
