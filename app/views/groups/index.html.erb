@@ -1,0 +1,34 @@
+<section class='full-page'>
+    <div class='header'>
+        <%= image_tag('hamburger.svg', size: '35x35') %>
+
+        <h3>CATEGORIES</h3>
+        
+        <% if user_signed_in? %>
+            <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: :delete } %>
+        <% end %>
+    </div>
+    <div class='main'>
+        <% @groups.each do |group| %>
+            <% if current_user.id == group.author_id %>
+                <div class='category'>
+                    <div>
+                        <%= image_tag(group.icon, size: '50x50') %>
+
+                        <div class='category-title'>
+                            <%= link_to user_group_payments_path(current_user, group.id) do %>
+                                <p><%= group.name %></p>
+                            <% end %>
+
+                            <small><%= group.created_at.strftime("%d %b %Y") %></small>
+                        </div>
+                    </div>
+                    <p>$<%= number_with_delimiter(group.payments.sum(:amount)) %></p>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+    <div class='footer'>
+        <%= link_to 'Add A New Category', new_user_group_path(@user) %>
+    </div>
+</section>
