@@ -74,11 +74,11 @@
 
 <!-- LIVE DEMO -->
 
-<!-- ## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Live Demo <a name="live-demo"></a>
 
 - [Live Demo Link](#)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
@@ -200,7 +200,7 @@ If you like this project then please do follow me and give a star to this repo.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thanks everyone who showed their support and kindness.
+Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella). And the license to use is [Creative Commons license of the design](https://creativecommons.org/licenses/by-nc/4.0/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
